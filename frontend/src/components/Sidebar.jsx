@@ -7,6 +7,7 @@ import {
   Settings,
   LogOut,
   Bot,
+  ChevronRight,
 } from "lucide-react";
 
 const menu = [
@@ -37,43 +38,65 @@ const menu = [
   },
 ];
 
-export default function Sidebar({ slug, orgName, onLogout }) {
+export default function Sidebar({
+  slug,
+  orgName,
+  onLogout,
+}) {
   return (
-    <aside className="w-64 h-screen fixed left-0 top-0 bg-white border-r border-neutral-200 flex flex-col shrink-0 z-50">
+    <aside className="fixed left-0 top-0 w-64 h-screen bg-black text-white flex flex-col z-50">
 
-      {/* TOP BRAND */}
+      {/* LOGO */}
 
-      <div className="px-6 py-6 border-b border-neutral-200">
+      <div className="px-6 py-5 border-b border-neutral-800">
 
         <div className="flex items-center gap-3">
 
-          <div className="w-11 h-11 rounded-xl bg-black text-white flex items-center justify-center">
-            <Bot size={20} />
+          <div className="w-10 h-10 rounded-xl bg-white text-black flex items-center justify-center">
+            <Bot size={18} />
           </div>
 
           <div>
-            <h2 className="font-semibold text-black">
+
+            <h2 className="text-base font-bold">
               Nexus
             </h2>
 
-            <p className="text-xs text-neutral-500">
+            <p className="text-[11px] text-neutral-400">
               Document Intelligence Platform
             </p>
+
           </div>
 
         </div>
 
-        {/* Org Card */}
+      </div>
 
-        <div className="mt-5 rounded-xl border border-neutral-200 bg-neutral-50 p-3">
+      {/* WORKSPACE */}
 
-          <p className="text-xs uppercase tracking-wide text-neutral-500">
-            Organization
-          </p>
+      <div className="px-5 py-4">
 
-          <p className="mt-1 text-sm font-medium text-black truncate">
-            {orgName}
-          </p>
+        <p className="text-[10px] uppercase tracking-[0.25em] text-neutral-500">
+          Workspace
+        </p>
+
+        <div className="mt-2 bg-neutral-900 border border-neutral-800 rounded-xl p-3">
+
+          <div className="flex items-center justify-between">
+
+            <div className="min-w-0">
+
+              <p className="text-[11px] text-neutral-500">
+                Organization
+              </p>
+
+              <h3 className="font-semibold text-sm truncate mt-1">
+                {orgName}
+              </h3>
+
+            </div>
+
+          </div>
 
         </div>
 
@@ -81,7 +104,7 @@ export default function Sidebar({ slug, orgName, onLogout }) {
 
       {/* NAVIGATION */}
 
-      <nav className="flex-1 px-3 py-6 space-y-1">
+      <nav className="flex-1 px-3 space-y-1.5">
 
         {menu.map((item) => {
           const Icon = item.icon;
@@ -91,17 +114,28 @@ export default function Sidebar({ slug, orgName, onLogout }) {
               key={item.path}
               to={`/org/${slug}/${item.path}`}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition group ${
+                `group flex items-center justify-between rounded-xl px-3 py-2.5 transition-all duration-200 ${
                   isActive
-                    ? "bg-black text-white"
-                    : "text-neutral-700 hover:bg-neutral-100"
+                    ? "bg-white text-black shadow-lg"
+                    : "text-neutral-400 hover:bg-neutral-900 hover:text-white"
                 }`
               }
             >
 
-              <Icon size={18} className="shrink-0" />
+              <div className="flex items-center gap-3">
 
-              <span>{item.label}</span>
+                <Icon size={17} />
+
+                <span className="text-sm font-medium">
+                  {item.label}
+                </span>
+
+              </div>
+
+              <ChevronRight
+                size={14}
+                className="opacity-40 group-hover:opacity-100 transition"
+              />
 
             </NavLink>
           );
@@ -111,14 +145,17 @@ export default function Sidebar({ slug, orgName, onLogout }) {
 
       {/* FOOTER */}
 
-      <div className="border-t border-neutral-200 p-4">
+      <div className="border-t border-neutral-800 p-4">
 
         <button
           onClick={onLogout}
-          className="w-full flex items-center justify-center gap-2 border border-neutral-200 rounded-xl py-3 text-sm font-medium hover:bg-neutral-100 transition"
+          className="w-full flex items-center justify-center gap-2 bg-neutral-900 border border-neutral-700 rounded-xl py-2.5 text-sm font-medium text-white hover:bg-white hover:text-black transition-all duration-300"
         >
+
           <LogOut size={16} />
-          Sign Out
+
+          <span>Sign Out</span>
+
         </button>
 
       </div>

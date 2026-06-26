@@ -3,7 +3,11 @@ import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 import { clearAuth } from "../utils/auth";
 
-export default function DashboardLayout({ organization, title, children }) {
+export default function DashboardLayout({
+  organization,
+  title,
+  children,
+}) {
   const navigate = useNavigate();
 
   const logout = () => {
@@ -12,29 +16,41 @@ export default function DashboardLayout({ organization, title, children }) {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-neutral-100">
 
-      {/* Sidebar (fixed, out of flow) */}
+      {/* Sidebar */}
+
       <Sidebar
         slug={organization.slug}
         orgName={organization.name}
         onLogout={logout}
       />
 
-      {/* Main Content (shifted right manually) */}
-      <div className="ml-64 min-h-screen bg-neutral-50 flex flex-col">
+      {/* Main Content */}
 
-        {/* Topbar */}
-        <Topbar organization={organization} title={title} />
+      <div className="ml-64 min-h-screen flex flex-col">
+
+        {/* Top Navigation */}
+
+        <Topbar
+          organization={organization}
+          title={title}
+        />
 
         {/* Page Content */}
-        <main className="flex-1 p-6 md:p-8">
-          <div className="max-w-5xl mx-auto w-full">
+
+        <main className="flex-1 p-6 lg:p-8">
+
+          <div className="max-w-7xl mx-auto">
+
             {children}
+
           </div>
+
         </main>
 
       </div>
+
     </div>
   );
 }
