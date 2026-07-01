@@ -154,18 +154,28 @@ export default function WidgetPage({ organization }) {
 
   return (
     <DashboardLayout organization={organization} title="Widget">
-      <div className="mb-8 max-w-3xl">
-        <h2 className="text-2xl font-semibold text-neutral-900 tracking-tight">
-          Widget customization
-        </h2>
-        <p className="mt-2 text-neutral-600 leading-relaxed">
-          Configure how your chatbot appears on your website. Use the live preview
-          in the bottom-right corner to test questions against your documents.
-        </p>
+      <div className="mb-10 flex items-center justify-between">
+        <div className="flex-1">
+          <h1 className="text-3xl font-bold text-neutral-900">
+            Widget Customization
+          </h1>
+
+          <p className="mt-2 text-neutral-500 max-w-2xl">
+            Customize how your AI assistant appears on your website.
+            Changes are reflected instantly.
+          </p>
+        </div>
+
+        <div className="hidden md:flex items-center gap-2 rounded-full bg-green-50 px-4 py-2">
+
+          <div className="w-2 h-2 rounded-full bg-green-500"/>
+
+            <span className="text-sm font-medium text-green-700">Live Preview</span>
+          </div>
       </div>
 
-      <div className="grid xl:grid-cols-[minmax(0,420px)_1fr] gap-8">
-        <div className="space-y-5">
+      <div className="grid xl:grid-cols-[380px_380px_minmax(0,1fr)] gap-8 items-start">
+      <div className="space-y-6 sticky top-6 self-start">
           <section className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
             <h3 className="text-sm font-semibold text-neutral-900 mb-4">Content</h3>
             <div className="space-y-4">
@@ -260,7 +270,7 @@ export default function WidgetPage({ organization }) {
 
           <section className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
             <h3 className="text-sm font-semibold text-neutral-900 mb-4">Launcher style</h3>
-            <div className="grid grid-cols-4 gap-2">
+            <div className="grid grid-cols-2 gap-2">
               {stylePresets.map((preset) => {
                 const Icon = preset.icon;
                 const active = settings.widget_style === preset.id;
@@ -269,7 +279,7 @@ export default function WidgetPage({ organization }) {
                     key={preset.id}
                     type="button"
                     onClick={() => setSettings({ ...settings, widget_style: preset.id })}
-                    className={`rounded-xl border p-3 transition ${
+                    className={`rounded-xl border p-5 transition ${
                       active
                         ? "border-neutral-900 bg-neutral-50 ring-1 ring-neutral-900/10"
                         : "border-neutral-200 hover:border-neutral-400"
@@ -321,18 +331,18 @@ export default function WidgetPage({ organization }) {
           </button>
 
           {saved && (
-            <p className="text-sm text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-xl px-4 py-2.5">
+            <p className="text-sm text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-2xl px-4 py-2.5">
               Settings saved. Preview widget updated.
             </p>
           )}
           {error && (
-            <p className="text-sm text-red-700 bg-red-50 border border-red-100 rounded-xl px-4 py-2.5">
+            <p className="text-sm text-red-700 bg-red-50 border border-red-100 rounded-2xl px-4 py-2.5">
               {error}
             </p>
           )}
         </div>
 
-        <div className="space-y-5">
+        <div className="space-y-6 sticky top-6 self-start">
           <section className="rounded-2xl border border-neutral-200 bg-white overflow-hidden shadow-sm">
             <div className="px-6 py-4 border-b border-neutral-100">
               <h3 className="font-semibold text-neutral-900">Static preview</h3>

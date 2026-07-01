@@ -1,29 +1,47 @@
 import DashboardLayout from "../components/DashboardLayout";
 
+import {
+  Building2,
+  Mail,
+  Hash,
+  Fingerprint,
+  Globe,
+  Bot,
+  Database,
+  BarChart3,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
+
 export default function Settings({ organization }) {
   const fields = [
     {
       label: "Organization Name",
       value: organization.name,
+      icon: Building2,
     },
     {
       label: "Email Address",
       value: organization.email,
+      icon: Mail,
     },
     {
       label: "Workspace Slug",
       value: organization.slug,
       mono: true,
+      icon: Hash,
     },
     {
       label: "Organization ID",
       value: organization.id,
       mono: true,
+      icon: Fingerprint,
     },
     {
       label: "Dashboard URL",
       value: `/org/${organization.slug}/dashboard`,
       mono: true,
+      icon: Globe,
     },
   ];
 
@@ -34,23 +52,36 @@ export default function Settings({ organization }) {
     >
       {/* Header */}
 
-      <div className="mb-10">
+    <div className="flex items-center justify-between mb-10">
 
-        <h2 className="text-3xl font-bold text-black">
+      <div>
+
+        <h1 className="text-3xl font-bold text-neutral-900">
           Organization Settings
-        </h2>
+        </h1>
 
-        <p className="mt-3 text-neutral-600 max-w-2xl leading-7">
-          View your organization profile and workspace information.
-          Every organization has an isolated AI knowledge base,
-          chatbot, and analytics dashboard.
+        <p className="mt-2 text-neutral-500 max-w-2xl">
+          Manage your workspace details and view important organization
+          information.
         </p>
+
+      </div>
+
+      <div className="hidden md:flex items-center gap-2 bg-emerald-50 px-4 py-2 rounded-full">
+
+        <ShieldCheck size={18} className="text-emerald-600" />
+
+        <span className="text-sm font-medium text-emerald-700">
+          Workspace Active
+        </span>
+
+      </div>
 
       </div>
 
       {/* Profile Card */}
 
-      <div className="bg-white border border-neutral-200 rounded-2xl p-8 max-w-4xl">
+      <div className="bg-white border border-neutral-200 rounded-3xl shadow-sm p-8">
 
         <div className="flex items-center gap-5 mb-8">
 
@@ -60,46 +91,60 @@ export default function Settings({ organization }) {
 
           </div>
 
-          <div>
+        <div>
 
-            <h3 className="text-2xl font-semibold">
-              {organization.name}
-            </h3>
+        <h3 className="text-2xl font-semibold">
+          {organization.name}
+        </h3>
 
-            <p className="text-neutral-500 mt-1">
-              AI Knowledge Platform Workspace
-            </p>
+        <p className="text-neutral-500 mt-1">
+          AI Knowledge Platform Workspace
+        </p>
 
-          </div>
+      </div>
+
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-6">
+      {fields.map((field) => {
+      const Icon = field.icon;
+
+  return (
+    <div
+      key={field.label}
+      className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5 hover:bg-white hover:shadow-md transition"
+    >
+      <div className="flex items-center gap-3 mb-3">
+
+        <div className="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center">
+
+          <Icon size={18} />
 
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div>
 
-          {fields.map((field) => (
+          <p className="text-xs uppercase tracking-wide text-neutral-500">
+            {field.label}
+          </p>
 
-            <div
-              key={field.label}
-              className="border border-neutral-200 rounded-xl p-5 bg-neutral-50"
-            >
+        </div>
 
-              <p className="text-xs uppercase tracking-wide text-neutral-500 mb-2">
-                {field.label}
-              </p>
+      </div>
 
-              <p
-                className={`text-sm text-black ${
-                  field.mono
-                    ? "font-mono break-all"
-                    : "font-medium"
-                }`}
-              >
-                {field.value}
-              </p>
+      <p
+        className={`text-sm ${
+          field.mono
+            ? "font-mono break-all"
+            : "font-medium"
+        }`}
+      >
+        {field.value}
+      </p>
 
-            </div>
-
-          ))}
+    </div>
+  );
+})}
 
         </div>
 
@@ -107,65 +152,65 @@ export default function Settings({ organization }) {
 
       {/* Workspace Info */}
 
-      <div className="bg-white border border-neutral-200 rounded-2xl p-8 mt-8 max-w-4xl">
+      <div className="bg-white border rounded-3xl shadow-sm p-8 mt-8">
 
-        <h3 className="text-xl font-semibold mb-5">
-          Workspace Information
-        </h3>
+  <div className="flex items-center gap-3 mb-6">
 
-        <div className="grid md:grid-cols-3 gap-5">
+    <Sparkles />
 
-          <div className="border rounded-xl p-5">
+    <h2 className="text-xl font-semibold">
+      Workspace Features
+    </h2>
 
-            <div className="text-3xl mb-3">
-              🤖
-            </div>
+  </div>
 
-            <h4 className="font-medium">
-              AI Chatbot
-            </h4>
+  <div className="grid md:grid-cols-3 gap-6">
 
-            <p className="text-sm text-neutral-500 mt-2">
-              Personalized chatbot powered by your uploaded documents.
-            </p>
+    <div className="rounded-2xl border p-6 hover:shadow-md transition">
 
-          </div>
+      <Bot size={34} />
 
-          <div className="border rounded-xl p-5">
+      <h3 className="font-semibold mt-4">
+        AI Chatbot
+      </h3>
 
-            <div className="text-3xl mb-3">
-              📄
-            </div>
+      <p className="text-sm text-neutral-500 mt-2">
+        Personalized chatbot powered by your uploaded documents.
+      </p>
 
-            <h4 className="font-medium">
-              Knowledge Base
-            </h4>
+    </div>
 
-            <p className="text-sm text-neutral-500 mt-2">
-              PDFs are processed, chunked and indexed for RAG search.
-            </p>
+    <div className="rounded-2xl border p-6 hover:shadow-md transition">
 
-          </div>
+      <Database size={34} />
 
-          <div className="border rounded-xl p-5">
+      <h3 className="font-semibold mt-4">
+        Knowledge Base
+      </h3>
 
-            <div className="text-3xl mb-3">
-              📊
-            </div>
+      <p className="text-sm text-neutral-500 mt-2">
+        PDFs are processed and indexed for semantic search.
+      </p>
 
-            <h4 className="font-medium">
-              Analytics
-            </h4>
+    </div>
 
-            <p className="text-sm text-neutral-500 mt-2">
-              Monitor chatbot conversations and AI confidence scores.
-            </p>
+    <div className="rounded-2xl border p-6 hover:shadow-md transition">
 
-          </div>
+      <BarChart3 size={34} />
 
-        </div>
+      <h3 className="font-semibold mt-4">
+        Analytics
+      </h3>
 
-      </div>
+      <p className="text-sm text-neutral-500 mt-2">
+        Monitor conversations and AI confidence scores.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
 
     </DashboardLayout>
   );
