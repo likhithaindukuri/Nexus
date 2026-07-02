@@ -8,21 +8,6 @@
 Turn your organization's documents into an intelligent AI assistant capable of answering questions with accurate source citations.
 </p>
 
-<p align="center">
-
-![React](https://img.shields.io/badge/React-19-000000?style=for-the-badge&logo=react)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-000000?style=for-the-badge&logo=fastapi)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-000000?style=for-the-badge&logo=postgresql)
-![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector_DB-000000?style=for-the-badge)
-![Gemini](https://img.shields.io/badge/Gemini-Pro-000000?style=for-the-badge&logo=google)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-UI-000000?style=for-the-badge&logo=tailwindcss)
-![JWT](https://img.shields.io/badge/JWT-Authentication-000000?style=for-the-badge)
-![Vercel](https://img.shields.io/badge/Vercel-Frontend-000000?style=for-the-badge&logo=vercel)
-![Render](https://img.shields.io/badge/Render-Backend-000000?style=for-the-badge)
-![Neon](https://img.shields.io/badge/Neon-PostgreSQL-000000?style=for-the-badge)
-
-</p>
-
 ---
 
 # Live Demo
@@ -32,7 +17,7 @@ Turn your organization's documents into an intelligent AI assistant capable of a
 > **Live Application**
 
 ```
-https://your-dashboard-url.vercel.app
+https://nexus-mu-eight.vercel.app/
 ```
 
 ### Demo Organization Website
@@ -40,7 +25,7 @@ https://your-dashboard-url.vercel.app
 > **Embedded Chatbot Demo**
 
 ```
-https://your-demo-website.vercel.app
+https://nexus-demo-portal.vercel.app/index.html
 ```
 
 ---
@@ -1238,40 +1223,3 @@ Feel free to use, modify, and learn from the project.
 # Author
 
 **Likhitha Indukuri**
-
-Full Stack Developer | AI Enthusiast
-
-GitHub:
-https://github.com/your-github
-
-LinkedIn:
-https://linkedin.com/in/your-linkedin
-
-Portfolio:
-https://your-portfolio.com
-
----
-
-# Acknowledgements
-
-Special thanks to the open-source community and the amazing technologies that made this project possible.
-
-- React
-- FastAPI
-- PostgreSQL
-- ChromaDB
-- Google Gemini
-- Tailwind CSS
-- SQLAlchemy
-- Lucide React
-- Vercel
-- Render
-- Neon
-
----
-
-<p align="center">
-
-Built with ❤️ using React, FastAPI, PostgreSQL, ChromaDB and Retrieval-Augmented Generation (RAG).
-
-</p>
