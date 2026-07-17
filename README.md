@@ -645,5 +645,3 @@ Users simply ask:
 > "What is the hostel fee?"
 
 and Nexus retrieves the most relevant document sections before generating a reliable answer.
-
----
