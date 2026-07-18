@@ -190,7 +190,7 @@ without changing any code.
 
 ---
 
-# Project Screenshots
+<!-- # Project Screenshots
 
 > **Replace these placeholders with your screenshots after the UI redesign.**
 
@@ -256,7 +256,7 @@ without changing any code.
 (Add Screenshot Here)
 ```
 
----
+--- -->
 
 # High-Level Architecture
 
