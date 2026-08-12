@@ -50,168 +50,321 @@ export default function Settings({ organization }) {
       organization={organization}
       title="Settings"
     >
-      {/* Header */}
-
-    <div className="flex items-center justify-between mb-10">
-
-      <div>
-
-        <h1 className="text-3xl font-bold text-neutral-900">
-          Organization Settings
-        </h1>
-
-        <p className="mt-2 text-neutral-500 max-w-2xl">
-          Manage your workspace details and view important organization
-          information.
-        </p>
-
-      </div>
-
-      <div className="hidden md:flex items-center gap-2 bg-emerald-50 px-4 py-2 rounded-full">
-
-        <ShieldCheck size={18} className="text-emerald-600" />
-
-        <span className="text-sm font-medium text-emerald-700">
-          Workspace Active
-        </span>
-
-      </div>
-
-      </div>
-
-      {/* Profile Card */}
-
-      <div className="bg-white border border-neutral-200 rounded-3xl shadow-sm p-8">
-
-        <div className="flex items-center gap-5 mb-8">
-
-          <div className="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center text-2xl font-bold">
-
-            {organization.name.charAt(0).toUpperCase()}
-
+      <div className="min-h-full bg-neutral-100 p-6">
+  
+        {/* ========================================================= */}
+        {/* MAIN WHITE PANEL */}
+        {/* ========================================================= */}
+  
+        <div className="w-full rounded-2xl bg-white px-8 py-8">
+  
+          {/* ======================================================= */}
+          {/* HEADER */}
+          {/* ======================================================= */}
+  
+          <div className="mb-8 flex items-start justify-between gap-6">
+  
+            <div>
+              <p className="mb-1 text-sm font-medium text-neutral-400">
+                Workspace
+              </p>
+  
+              <h1 className="text-4xl font-bold tracking-tight text-neutral-950">
+                Settings
+              </h1>
+  
+              <p className="mt-2 max-w-2xl text-base text-neutral-500">
+                Manage your organization and workspace information.
+              </p>
+            </div>
+  
+            {/* Status */}
+            <div className="hidden items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 py-2.5 md:flex">
+  
+              <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
+  
+              <span className="text-sm font-medium text-neutral-700">
+                Workspace Active
+              </span>
+  
+            </div>
+  
           </div>
-
-        <div>
-
-        <h3 className="text-2xl font-semibold">
-          {organization.name}
-        </h3>
-
-        <p className="text-neutral-500 mt-1">
-          AI Knowledge Platform Workspace
-        </p>
-
-      </div>
-
-    </div>
-
-    <div className="grid md:grid-cols-2 gap-6">
-      {fields.map((field) => {
-      const Icon = field.icon;
-
-  return (
-    <div
-      key={field.label}
-      className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5 hover:bg-white hover:shadow-md transition"
-    >
-      <div className="flex items-center gap-3 mb-3">
-
-        <div className="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center">
-
-          <Icon size={18} />
-
+  
+  
+          {/* ======================================================= */}
+          {/* ORGANIZATION */}
+          {/* ======================================================= */}
+  
+          <section className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+  
+            {/* Section Header */}
+  
+            <div className="border-b border-neutral-100 px-6 py-6">
+  
+              <div className="flex items-center gap-4">
+  
+                {/* Organization Avatar */}
+  
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-black text-lg font-semibold text-white">
+                  {organization.name.charAt(0).toUpperCase()}
+                </div>
+  
+                <div>
+  
+                  <h2 className="text-lg font-semibold text-neutral-950">
+                    {organization.name}
+                  </h2>
+  
+                  <p className="mt-1 text-sm text-neutral-500">
+                    Organization workspace
+                  </p>
+  
+                </div>
+  
+              </div>
+  
+            </div>
+  
+  
+            {/* Organization Fields */}
+  
+            <div className="grid grid-cols-1 md:grid-cols-2">
+  
+              {fields.map((field, index) => {
+  
+                const Icon = field.icon;
+  
+                const isLast =
+                  index === fields.length - 1;
+  
+                return (
+                  <div
+                    key={field.label}
+                    className={`px-6 py-6 ${
+                      index % 2 === 0
+                        ? "md:border-r border-neutral-100"
+                        : ""
+                    } ${
+                      !isLast
+                        ? "border-b border-neutral-100"
+                        : ""
+                    }`}
+                  >
+  
+                    <div className="mb-3 flex items-center gap-2.5">
+  
+                      <Icon
+                        size={16}
+                        className="text-neutral-400"
+                      />
+  
+                      <p className="text-xs font-medium uppercase tracking-wider text-neutral-400">
+                        {field.label}
+                      </p>
+  
+                    </div>
+  
+                    <p
+                      className={`text-sm text-neutral-900 ${
+                        field.mono
+                          ? "break-all font-mono"
+                          : "font-medium"
+                      }`}
+                    >
+                      {field.value}
+                    </p>
+  
+                  </div>
+                );
+  
+              })}
+  
+            </div>
+  
+          </section>
+  
+  
+          {/* ======================================================= */}
+          {/* WORKSPACE INFORMATION */}
+          {/* ======================================================= */}
+  
+          <section className="mt-6 overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+  
+            {/* Section Header */}
+  
+            <div className="flex items-center justify-between border-b border-neutral-100 px-6 py-6">
+  
+              <div>
+  
+                <h2 className="text-lg font-semibold text-neutral-950">
+                  Workspace
+                </h2>
+  
+                <p className="mt-1 text-sm text-neutral-500">
+                  Services available in your Nexus workspace.
+                </p>
+  
+              </div>
+  
+              <div className="hidden items-center gap-2 sm:flex">
+  
+                <span className="h-2 w-2 rounded-full bg-emerald-500" />
+  
+                <span className="text-sm font-medium text-neutral-600">
+                  Active
+                </span>
+  
+              </div>
+  
+            </div>
+  
+  
+            {/* Workspace Features */}
+  
+            <div className="grid grid-cols-1 md:grid-cols-3">
+  
+              {/* AI Chatbot */}
+  
+              <div className="border-b border-neutral-100 p-6 md:border-b-0 md:border-r">
+  
+                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100">
+  
+                  <Bot
+                    size={19}
+                    className="text-neutral-900"
+                  />
+  
+                </div>
+  
+                <h3 className="text-sm font-semibold text-neutral-950">
+                  AI Chatbot
+                </h3>
+  
+                <p className="mt-2 text-sm leading-6 text-neutral-500">
+                  Personalized chatbot powered by your uploaded documents.
+                </p>
+  
+                <div className="mt-5 flex items-center gap-2">
+  
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+  
+                  <span className="text-xs font-medium text-neutral-600">
+                    Available
+                  </span>
+  
+                </div>
+  
+              </div>
+  
+  
+              {/* Knowledge Base */}
+  
+              <div className="border-b border-neutral-100 p-6 md:border-b-0 md:border-r">
+  
+                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100">
+  
+                  <Database
+                    size={19}
+                    className="text-neutral-900"
+                  />
+  
+                </div>
+  
+                <h3 className="text-sm font-semibold text-neutral-950">
+                  Knowledge Base
+                </h3>
+  
+                <p className="mt-2 text-sm leading-6 text-neutral-500">
+                  PDFs are processed and indexed for semantic search.
+                </p>
+  
+                <div className="mt-5 flex items-center gap-2">
+  
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+  
+                  <span className="text-xs font-medium text-neutral-600">
+                    Connected
+                  </span>
+  
+                </div>
+  
+              </div>
+  
+  
+              {/* Analytics */}
+  
+              <div className="p-6">
+  
+                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100">
+  
+                  <BarChart3
+                    size={19}
+                    className="text-neutral-900"
+                  />
+  
+                </div>
+  
+                <h3 className="text-sm font-semibold text-neutral-950">
+                  Analytics
+                </h3>
+  
+                <p className="mt-2 text-sm leading-6 text-neutral-500">
+                  Monitor conversations and AI confidence scores.
+                </p>
+  
+                <div className="mt-5 flex items-center gap-2">
+  
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+  
+                  <span className="text-xs font-medium text-neutral-600">
+                    Available
+                  </span>
+  
+                </div>
+  
+              </div>
+  
+            </div>
+  
+          </section>
+  
+  
+          {/* ======================================================= */}
+          {/* SYSTEM INFORMATION */}
+          {/* ======================================================= */}
+  
+          <section className="mt-6 rounded-2xl border border-neutral-200 bg-neutral-50 px-6 py-5">
+  
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+  
+              <div>
+  
+                <p className="text-sm font-medium text-neutral-900">
+                  Nexus workspace
+                </p>
+  
+                <p className="mt-1 text-xs text-neutral-500">
+                  Your organization information is managed by your workspace administrator.
+                </p>
+  
+              </div>
+  
+              <div className="flex items-center gap-2 text-xs text-neutral-500">
+  
+                <ShieldCheck size={15} />
+  
+                Workspace verified
+  
+              </div>
+  
+            </div>
+  
+          </section>
+  
         </div>
-
-        <div>
-
-          <p className="text-xs uppercase tracking-wide text-neutral-500">
-            {field.label}
-          </p>
-
-        </div>
-
+  
       </div>
-
-      <p
-        className={`text-sm ${
-          field.mono
-            ? "font-mono break-all"
-            : "font-medium"
-        }`}
-      >
-        {field.value}
-      </p>
-
-    </div>
-  );
-})}
-
-        </div>
-
-      </div>
-
-      {/* Workspace Info */}
-
-      <div className="bg-white border rounded-3xl shadow-sm p-8 mt-8">
-
-  <div className="flex items-center gap-3 mb-6">
-
-    <Sparkles />
-
-    <h2 className="text-xl font-semibold">
-      Workspace Features
-    </h2>
-
-  </div>
-
-  <div className="grid md:grid-cols-3 gap-6">
-
-    <div className="rounded-2xl border p-6 hover:shadow-md transition">
-
-      <Bot size={34} />
-
-      <h3 className="font-semibold mt-4">
-        AI Chatbot
-      </h3>
-
-      <p className="text-sm text-neutral-500 mt-2">
-        Personalized chatbot powered by your uploaded documents.
-      </p>
-
-    </div>
-
-    <div className="rounded-2xl border p-6 hover:shadow-md transition">
-
-      <Database size={34} />
-
-      <h3 className="font-semibold mt-4">
-        Knowledge Base
-      </h3>
-
-      <p className="text-sm text-neutral-500 mt-2">
-        PDFs are processed and indexed for semantic search.
-      </p>
-
-    </div>
-
-    <div className="rounded-2xl border p-6 hover:shadow-md transition">
-
-      <BarChart3 size={34} />
-
-      <h3 className="font-semibold mt-4">
-        Analytics
-      </h3>
-
-      <p className="text-sm text-neutral-500 mt-2">
-        Monitor conversations and AI confidence scores.
-      </p>
-
-    </div>
-
-  </div>
-
-</div>
-
     </DashboardLayout>
   );
 }
