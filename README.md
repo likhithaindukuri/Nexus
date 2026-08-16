@@ -10,26 +10,6 @@ Turn your organization's documents into an intelligent AI assistant capable of a
 
 ---
 
-# Live Demo
-
-### Nexus Dashboard
-
-> **Live Application**
-
-```
-https://nexus-mu-eight.vercel.app/
-```
-
-### Demo Organization Website
-
-> **Embedded Chatbot Demo**
-
-```
-https://nexus-demo-portal.vercel.app/index.html
-```
-
----
-
 # Project Overview
 
 Nexus is a **Multi-Tenant AI Knowledge Platform** that enables organizations to build their own AI-powered knowledge assistants without writing any AI code.
@@ -68,28 +48,6 @@ Searching these documents manually is slow and frustrating.
 Nexus transforms those documents into an AI-powered assistant that can instantly answer questions using only the organization's uploaded knowledge.
 
 Instead of searching documents manually...
-
-```
-
-Find PDF
-
-↓
-
-Open PDF
-
-↓
-
-Search Keyword
-
-↓
-
-Read Pages
-
-↓
-
-Find Answer
-
-```
 
 Users simply ask:
 
@@ -194,43 +152,43 @@ without changing any code.
 
 ## Landing Page
 
-<img src="screenshots/1.png" alt="Landing Page" width="800"/>
-<img src="screenshots/2.png" alt="Landing Page" width="800"/>
+<img src="/frontend/public/1.png" alt="Landing Page" width="800"/>
+<img src="/frontend/public/2.png" alt="Landing Page" width="800"/>
 
 ---
 
 ## Organization Dashboard
 
-<img src="screenshots/3.png" alt="Landing Page" width="800"/>
+<img src="/frontend/public/3.png" alt="Organization Dashboard" width="800"/>
 
 ---
 
 ## Documents Management
 
-<img src="screenshots/4.png" alt="Landing Page" width="800"/>
+<img src="/frontend/public/4.png" alt="Document Management" width="800"/>
 
 ---
 
 ## Widget Customization
 
-<img src="screenshots/5.png" alt="Landing Page" width="800"/>
-<img src="screenshots/6.png" alt="Landing Page" width="800"/>
+<img src="/frontend/public/5.png" alt="Widget Customization" width="800"/>
+<img src="/frontend/public/6.png" alt="Widget Customization" width="800"/>
 
 ---
 
 ## Analytics Dashboard
 
-<img src="screenshots/7.png" alt="Landing Page" width="800"/>
+<img src="/frontend/public/7.png" alt="Analytics Dashboard" width="800"/>
 
 ## Settings
-<img src="screenshots/8.png" alt="Landing Page" width="800"/>
+<img src="/frontend/public/8.png" alt="Settings" width="800"/>
 
 ---
 
 ## Embedded Chatbot in Demo Portal
 
-<img src="screenshots/9.png" alt="Landing Page" width="800"/>
-<img src="screenshots/10.png" alt="Landing Page" width="800"/>
+<img src="/frontend/public/9.png" alt="Embedded Chatbot in Demo Portal" width="800"/>
+<img src="/frontend/public/10.png" alt="Embedded Chatbot in Demo Portal" width="800"/>
 
 ---
 
@@ -587,37 +545,3 @@ Planned improvements include:
 - Rate Limiting
 - Usage Billing
 - Admin Dashboard
-
----
-
-# Why This Project?
-
-Traditional document search requires users to manually browse through lengthy documents to locate information.
-
-Nexus simplifies this process by transforming organizational knowledge into an AI-powered assistant capable of answering questions instantly with transparent citations.
-
-Instead of searching through documents...
-
-```
-
-User
-
-↓
-
-Search PDF
-
-↓
-
-Read Pages
-
-↓
-
-Find Answer
-
-```
-
-Users simply ask:
-
-> "What is the hostel fee?"
-
-and Nexus retrieves the most relevant document sections before generating a reliable answer.
