@@ -190,73 +190,49 @@ without changing any code.
 
 ---
 
-<!-- # Project Screenshots
-
-> **Replace these placeholders with your screenshots after the UI redesign.**
+# Project Screenshots
 
 ## Landing Page
 
-```
-(Add Screenshot Here)
-```
+<img src="screenshots/1.png" alt="Landing Page" width="800"/>
+<img src="screenshots/2.png" alt="Landing Page" width="800"/>
 
 ---
 
 ## Organization Dashboard
 
-```
-(Add Screenshot Here)
-```
+<img src="screenshots/3.png" alt="Landing Page" width="800"/>
 
 ---
 
 ## Documents Management
 
-```
-(Add Screenshot Here)
-```
+<img src="screenshots/4.png" alt="Landing Page" width="800"/>
 
 ---
 
 ## Widget Customization
 
-```
-(Add Screenshot Here)
-```
+<img src="screenshots/5.png" alt="Landing Page" width="800"/>
+<img src="screenshots/6.png" alt="Landing Page" width="800"/>
 
 ---
 
 ## Analytics Dashboard
 
-```
-(Add Screenshot Here)
-```
-
----
+<img src="screenshots/7.png" alt="Landing Page" width="800"/>
 
 ## Settings
-
-```
-(Add Screenshot Here)
-```
+<img src="screenshots/8.png" alt="Landing Page" width="800"/>
 
 ---
 
-## Embedded Chatbot
+## Embedded Chatbot in Demo Portal
 
-```
-(Add Screenshot Here)
-```
+<img src="screenshots/9.png" alt="Landing Page" width="800"/>
+<img src="screenshots/10.png" alt="Landing Page" width="800"/>
 
 ---
-
-## Demo Organization Website
-
-```
-(Add Screenshot Here)
-```
-
---- -->
 
 # High-Level Architecture
 
